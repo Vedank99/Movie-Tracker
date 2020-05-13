@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Trending Movies"
+        android:textSize="35dp"
+        android:id="@+id/popMovies"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="My Watchlist"
+        android:textSize="35dp"
+        android:id="@+id/watchList"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Watched Movies"
+        android:textSize="35dp"
+        android:id="@+id/watched"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Search Movies"
+        android:textSize="35dp"
+        android:id="@+id/search"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="About"
+        android:textSize="35dp"
+        android:id="@+id/about"
+        />
+
+</LinearLayout>
