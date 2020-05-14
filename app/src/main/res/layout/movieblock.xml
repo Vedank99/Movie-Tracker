@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:background="#222222"
     android:id="@+id/movieBlock">
     <ImageView
         android:layout_width="100dp"
@@ -17,7 +18,9 @@
         android:layout_toRightOf="@id/poster"
         android:id="@+id/title"
         android:text="title"
-        android:padding="8dp"
+        android:textSize="20dp"
+        android:textColor="#EEEEEE"
+        android:padding="15dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +28,8 @@
         android:layout_below="@id/title"
         android:layout_toRightOf="@id/poster"
         android:text="Rating"
-        android:paddingLeft="8dp"
+        android:textColor="#EEEEEE"
+        android:paddingLeft="15dp"
         android:paddingRight="8dp"
         android:paddingBottom="8dp"
         android:id="@+id/ratingText"
@@ -35,7 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:layout_toRightOf="@id/ratingText"
-        android:text="10.00"
+        android:text="N / A"
+        android:textColor="#EEEEEE"
         android:paddingBottom="8dp"
         android:paddingRight="8dp"
         android:id="@+id/rating"
@@ -46,8 +51,9 @@
         android:layout_below="@id/ratingText"
         android:layout_toRightOf="@id/poster"
         android:text="2018"
+        android:textColor="#EEEEEE"
         android:paddingBottom="8dp"
-        android:paddingLeft="8dp"
+        android:paddingLeft="15dp"
         android:paddingRight="8dp"
         android:id="@+id/releaseYear"
         />

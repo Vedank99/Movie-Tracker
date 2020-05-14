@@ -3,13 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#222222"
     >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
         android:text="Trending Movies"
-        android:textSize="35dp"
+        android:textSize="33dp"
+        android:textColor="#EEEEEE"
+        android:layout_weight="20"
         android:id="@+id/popMovies"
         />
     <TextView
@@ -17,7 +20,9 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:text="My Watchlist"
-        android:textSize="35dp"
+        android:textSize="33dp"
+        android:textColor="#EEEEEE"
+        android:layout_weight="20"
         android:id="@+id/watchList"
 
         />
@@ -25,25 +30,30 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
+        android:layout_weight="20"
         android:text="Watched Movies"
-        android:textSize="35dp"
+        android:textSize="33dp"
+        android:textColor="#EEEEEE"
         android:id="@+id/watched"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
+        android:layout_weight="20"
         android:text="Search Movies"
-        android:textSize="35dp"
+        android:textSize="33dp"
+        android:textColor="#EEEEEE"
         android:id="@+id/search"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
+        android:layout_weight="20"
         android:text="About"
-        android:textSize="35dp"
+        android:textColor="#EEEEEE"
+        android:textSize="33dp"
         android:id="@+id/about"
         />
-
 </LinearLayout>

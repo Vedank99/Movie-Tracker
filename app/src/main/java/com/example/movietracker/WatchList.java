@@ -70,7 +70,10 @@ public class WatchList extends AppCompatActivity {
                 int pos = MovieClick.pos;
                 allWatchList.remove(pos);
                 watchListAdapter.removeMovie(pos);
-                //watchListID.remove(pos);
+
+                if (allWatchList.size() == 0) {
+                    setContentView(R.layout.nomovies);
+                }
             }
         } else {
 

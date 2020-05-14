@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#222222"
     >
 <LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#222222"
     tools:context=".about">
     <TextView
         android:layout_width="wrap_content"
@@ -16,6 +18,7 @@
         android:text="About the App"
         android:paddingBottom="20dp"
         android:textSize="25dp"
+        android:textColor="#EEEEEE"
         android:paddingTop="20dp"
         android:layout_gravity="center_horizontal"
         />
@@ -24,6 +27,7 @@
         android:layout_height="wrap_content"
         android:text="This App lets you track your movies."
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingLeft="20dp"
         android:paddingBottom="10dp"
         android:paddingRight="20dp"
@@ -34,12 +38,14 @@
         android:text="Trending Movies : Shows all the current trending movies."
         android:textSize="20dp"
         android:paddingBottom="10dp"
+        android:textColor="#EEEEEE"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         tools:ignore="MissingConstraints" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#EEEEEE"
         android:text="Watchlist : Your personalised list of movies you wish to watch."
         android:textSize="20dp"
         android:paddingBottom="10dp"
@@ -51,6 +57,7 @@
         android:layout_height="wrap_content"
         android:text="Watched : Keeps track of all the movies you have watched."
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -60,6 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Search : Search any movie you wish."
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -70,6 +78,7 @@
         android:text="Contact developer"
         android:paddingBottom="20dp"
         android:textSize="25dp"
+        android:textColor="#EEEEEE"
         android:paddingTop="20dp"
         android:layout_gravity="center_horizontal"
         />
@@ -78,6 +87,7 @@
         android:layout_height="wrap_content"
         android:text="WhatsApp : 9550100824"
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -87,6 +97,7 @@
         android:layout_height="wrap_content"
         android:text="Email : vedankgoyal99@gmail.com"
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -96,10 +107,11 @@
         android:layout_height="wrap_content"
         android:text="This app was made as a project in Android App Development."
         android:textSize="20dp"
+        android:textColor="#EEEEEE"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingTop="75dp"
+        android:paddingTop="10dp"
         tools:ignore="MissingConstraints"
         />
 </LinearLayout>

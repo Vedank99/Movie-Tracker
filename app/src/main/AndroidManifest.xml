@@ -13,12 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".about"></activity>
-        <activity android:name=".SearchMovies" />
-        <activity android:name=".MovieClick" />
-        <activity android:name=".Watched" />
-        <activity android:name=".WatchList" />
-        <activity android:name=".Movies" />
+        <activity android:name=".about"
+            android:label="About"/>
+        <activity android:name=".SearchMovies"
+            android:label="Search Movies"/>
+        <activity android:name=".MovieClick"
+            android:label="Movie"/>
+        <activity android:name=".Watched"
+            android:label="Watched Movies"/>
+        <activity android:name=".WatchList"
+            android:label="My Watchlist"/>
+        <activity android:name=".Movies"
+            android:label="Trending Movies"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

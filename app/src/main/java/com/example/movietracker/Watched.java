@@ -59,7 +59,11 @@ public class Watched extends AppCompatActivity {
                 int pos = MovieClick.pos;
                 allWatchedList.remove(pos);
                 watchedListAdapter.removeMovie(pos);
-                //  watchedListID.remove(pos);
+
+                if (allWatchedList.size() == 0) {
+                    setContentView(R.layout.nomovies);
+                }
+
             }
         } else {
 
