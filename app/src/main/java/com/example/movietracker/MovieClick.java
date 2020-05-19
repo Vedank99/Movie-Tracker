@@ -185,14 +185,15 @@ public class MovieClick extends YouTubeBaseActivity {
             if(!watchListInsert&&!watchedInsert){
                 b1.setText("Remove from watchlist");
                 b2.setText("Mark as watched");
-                watchListInsert = MainActivity.MyDb.insertWatchListData(movieId);
+                watchListInsert = HomeScreen.MyDb.insertWatchListData(movieId);
+
                 watchedInsert = false;
                 Toast.makeText(this,"Added to watchlist",Toast.LENGTH_SHORT).show();
             }
             else if(watchListInsert){
                 b1.setText("Add to watchlist");
                 b2.setText("Mark as watched");
-                Integer isDeleted = MainActivity.MyDb.deleteWatchListData(movieId);
+                Integer isDeleted = HomeScreen.MyDb.deleteWatchListData(movieId);
                 if(isDeleted>0) {
                     Toast.makeText(this,"Removed from watchlist",Toast.LENGTH_SHORT).show();
                     watchListInsert = false;
@@ -202,8 +203,8 @@ public class MovieClick extends YouTubeBaseActivity {
             else if(watchedInsert){
                 b1.setText("Remove from watchlist");
                 b2.setText("Mark as watched");
-                watchListInsert = MainActivity.MyDb.insertWatchListData(movieId);
-                Integer isDeleted = MainActivity.MyDb.deleteWatchedData(movieId);
+                watchListInsert = HomeScreen.MyDb.insertWatchListData(movieId);
+                Integer isDeleted = HomeScreen.MyDb.deleteWatchedData(movieId);
                 if(isDeleted>0){
                     watchedInsert = false;
                     Toast.makeText(this,"Added to watchlist",Toast.LENGTH_SHORT).show();
@@ -216,14 +217,14 @@ public class MovieClick extends YouTubeBaseActivity {
             if(!watchListInsert&&!watchedInsert){
                 b1.setText("Add to watchlist");
                 b2.setText("Remove from watched");
-                watchedInsert = MainActivity.MyDb.insertWatchedData(movie.getId());
+                watchedInsert = HomeScreen.MyDb.insertWatchedData(movie.getId());
                 Toast.makeText(this,"Marked as watched",Toast.LENGTH_SHORT).show();
             }
             else if(watchListInsert){
                 b1.setText("Add to watchlist");
                 b2.setText("Remove from watched");
-                watchedInsert = MainActivity.MyDb.insertWatchedData(movieId);
-                Integer isDeleted = MainActivity.MyDb.deleteWatchListData(movieId);
+                watchedInsert = HomeScreen.MyDb.insertWatchedData(movieId);
+                Integer isDeleted = HomeScreen.MyDb.deleteWatchListData(movieId);
                 if(isDeleted>0){
                     Toast.makeText(this,"Marked as watched",Toast.LENGTH_SHORT).show();
                     watchListInsert = false;
@@ -232,7 +233,7 @@ public class MovieClick extends YouTubeBaseActivity {
             else {
                 b1.setText("Add to watchlist");
                 b2.setText("Mark as watched");
-                Integer isDeleted = MainActivity.MyDb.deleteWatchedData(movieId);
+                Integer isDeleted = HomeScreen.MyDb.deleteWatchedData(movieId);
                 if(isDeleted>0){
                     Toast.makeText(this,"Removed from watched",Toast.LENGTH_SHORT).show();
                     watchedInsert = false;
@@ -253,13 +254,13 @@ public class MovieClick extends YouTubeBaseActivity {
         movie.setWatchList(watchListInsert);
         movie.setWatched(watchedInsert);
         if(!(mContextString.equals("Movies")||mContextString.equals("searchMovies"))&&!watchListInsert&&!watchedInsert&&!isSearched){
-            MainActivity.moviesAdd.add(movie);
+            HomeScreen.moviesAdd.add(movie);
         }
         else if(!(mContextString.equals("WatchList")||mContextString.equals("searchMoviesWatchList"))&&watchListInsert){
-            MainActivity.watchListAdd.add(movie);
+            HomeScreen.watchListAdd.add(movie);
         }
         else if(!(mContextString.equals("Watched")||mContextString.equals("searchMoviesWatched"))&&watchedInsert){
-            MainActivity.watchedAdd.add(movie);
+            HomeScreen.watchedAdd.add(movie);
         }
     }
 }

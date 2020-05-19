@@ -7,11 +7,25 @@ import retrofit2.http.Query;
 
 public interface TMDbApi {
 
-    @GET("movie/now_playing")
+    @GET("movie/popular")
     Call<MoviePage>getPopular(
         @Query("api_key") String apiKey,
         @Query("language") String language,
         @Query("page") int page
+    );
+
+    @GET("movie/top_rated")
+    Call<MoviePage>getTopRated(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("page") int page
+    );
+
+    @GET("movie/upcoming")
+    Call<MoviePage>getUpcoming(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("page") int page
     );
 
     @GET("movie/{id}")

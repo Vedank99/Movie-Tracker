@@ -9,57 +9,41 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="Discover Movies"
+        android:text="Top Rated Movies"
         android:textSize="33dp"
         android:textColor="#EEEEEE"
         android:layout_weight="20"
-        android:id="@+id/Movies"
+        android:id="@+id/trendMovies"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="My Watchlist"
+        android:text="Popular Movies"
         android:textSize="33dp"
         android:textColor="#EEEEEE"
         android:layout_weight="20"
-        android:id="@+id/watchList"
-        />
-    <ProgressBar
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:id="@+id/homescreenProgress"
-        android:visibility="gone"
+        android:id="@+id/popMovies"
+
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
         android:layout_weight="20"
-        android:text="Watched Movies"
+        android:text="Upcoming Movies"
         android:textSize="33dp"
         android:textColor="#EEEEEE"
-        android:id="@+id/watched"
+        android:id="@+id/upcomingMovies"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
         android:layout_weight="20"
-        android:text="About"
-        android:textSize="33dp"
-        android:textColor="#EEEEEE"
-        android:id="@+id/about"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:layout_weight="20"
-        android:text="Logout"
+        android:text="Search Movies"
         android:textColor="#EEEEEE"
         android:textSize="33dp"
-        android:id="@+id/logout"
+        android:id="@+id/search"
         />
 </LinearLayout>

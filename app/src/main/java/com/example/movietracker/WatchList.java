@@ -79,8 +79,8 @@ public class WatchList extends AppCompatActivity {
 
             watchListAdapter.clearData();
 
-            if (MainActivity.watchListAdd.size() > 0) {
-                allWatchList.addAll(MainActivity.watchListAdd);
+            if (HomeScreen.watchListAdd.size() > 0) {
+                allWatchList.addAll(HomeScreen.watchListAdd);
             }
             for (int i = 0; i < allWatchList.size(); i++) {
                 watchList.add(allWatchList.get(i));
@@ -107,9 +107,9 @@ public class WatchList extends AppCompatActivity {
         onCreateBool = false;
         //watchListID.clear();
         watchList.clear();
-        //watchListAdapter.clearData();
+        watchListAdapter.clearData();
         //allWatchList.clear();
-        MainActivity.watchListAdd.clear();
+        HomeScreen.watchListAdd.clear();
     }
 
     @Override

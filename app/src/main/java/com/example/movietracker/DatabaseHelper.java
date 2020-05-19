@@ -101,4 +101,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String search = "SELECT * FROM "+WATCHED_TABLE+" WHERE "+COL_2+" LIKE '%"+movieID+"%'";
         return db.rawQuery(search ,null);
     }
+
+    public void deleteAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(WATCHLIST_TABLE,null,null);
+       // db.execSQL("delete  from "+ WATCHLIST_TABLE);
+
+        db.delete(WATCHED_TABLE,null,null);
+      //  db.execSQL("delete  from "+ WATCHED_TABLE);
+
+        db.close();
+    }
+
+    public void resetDatabase() {
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL("DROP TABLE IF EXISTS " + WATCHED_TABLE);
+        database.execSQL("DROP TABLE IF EXISTS " + WATCHLIST_TABLE);
+
+        database.close();
+    }
+
+    public void createDB(){
+
+        SQLiteDatabase database = getWritableDatabase();
+
+        database.execSQL("create table " + WATCHLIST_TABLE +" (Number INTEGER PRIMARY KEY AUTOINCREMENT ," + COL_2 +" INTEGER )");
+        database.execSQL("create table " + WATCHED_TABLE +" (Number INTEGER PRIMARY KEY AUTOINCREMENT ," + COL_2 +" INTEGER )");
+    }
 }

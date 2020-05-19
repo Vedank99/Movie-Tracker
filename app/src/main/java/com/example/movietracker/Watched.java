@@ -69,8 +69,8 @@ public class Watched extends AppCompatActivity {
 
             watchedListAdapter.clearData();
 
-            if (MainActivity.watchedAdd.size() > 0) {
-                allWatchedList.addAll(MainActivity.watchedAdd);
+            if (HomeScreen.watchedAdd.size() > 0) {
+                allWatchedList.addAll(HomeScreen.watchedAdd);
             }
             for (int i = 0; i < allWatchedList.size(); i++) {
                 watchedList.add(allWatchedList.get(i));
@@ -93,11 +93,11 @@ public class Watched extends AppCompatActivity {
         onRestartBool = false;
         onDestroyedBool = true;
         onCreateBool = false;
-        //watchedListAdapter.clearData();
+        watchedListAdapter.clearData();
         watchedList.clear();
         //watchedListID.clear();
         //allWatchedList.clear();
-        MainActivity.watchedAdd.clear();
+        HomeScreen.watchedAdd.clear();
     }
 
     @Override

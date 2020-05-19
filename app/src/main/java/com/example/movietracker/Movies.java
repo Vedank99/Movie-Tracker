@@ -7,13 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.AbsListView;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +27,14 @@ public class Movies extends AppCompatActivity {
     String BASE_URL = "https://api.themoviedb.org/3/";
     String API_KEY = "e95363a215389eecb7b8fdd6283b098a";
     String LANGUAGE = "en-US";
+
+    public static final String POPULAR = "popular";
+    public static final String TOP_RATED = "top_rated";
+    public static final String UPCOMING = "upcoming";
+
+    String previousContext = "";
+    Intent intent;
+
     int currentPage = 1;
     public static List<MovieBlock>movies = new ArrayList<>();
     public static List<MovieBlock>allMovies = new ArrayList<>();
@@ -52,6 +58,15 @@ public class Movies extends AppCompatActivity {
 
         mContext = this;
 
+        intent = getIntent();
+        previousContext = intent.getStringExtra("type");
+
+        if(previousContext.equals("popular"))
+            setTitle("Popular Movies");
+        else if(previousContext.equals("top_rated"))
+            setTitle("Top Rated Movies");
+        else
+            setTitle("Upcoming Movies");
         recyclerView = findViewById(R.id.recyclerList);
         manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -83,8 +98,8 @@ public class Movies extends AppCompatActivity {
                 loadMovies(api,currentPage);
             else {
                 adapter.clearData();
-                if (MainActivity.moviesAdd.size() > 0) {
-                    allMovies.addAll(MainActivity.moviesAdd);
+                if (HomeScreen.moviesAdd.size() > 0) {
+                    allMovies.addAll(HomeScreen.moviesAdd);
                 }
                 for (int i = 0; i < allMovies.size(); i++) {
 
@@ -138,6 +153,7 @@ public class Movies extends AppCompatActivity {
         onCreateBool = false;
         Log.d("Activity Current Life","Activity Destroyed.");
         movies.clear();
+        allMovies.clear();
     }
 
     @Override
@@ -149,7 +165,13 @@ public class Movies extends AppCompatActivity {
         onCreateBool = false;
     }
     public void loadMovies(TMDbApi api, int page){
-        Call<MoviePage> call = api.getPopular(API_KEY,LANGUAGE,page);
+        Call<MoviePage> call;
+        if(previousContext.equals("popular"))
+            call = api.getPopular(API_KEY,LANGUAGE,page);
+        else if(previousContext.equals("top_rated"))
+            call = api.getTopRated(API_KEY,LANGUAGE,page);
+        else
+            call = api.getUpcoming(API_KEY,LANGUAGE,page);
         call.enqueue(new Callback<MoviePage>() {
             @Override
             public void onResponse(Call<MoviePage> call, Response<MoviePage> response) {
@@ -159,8 +181,8 @@ public class Movies extends AppCompatActivity {
                     Cursor cursorWatchList;
                     Cursor cursorWatched;
                     while (i<movies.size()) {
-                        cursorWatchList = MainActivity.MyDb.getWatchListMovie(movies.get(i).getId());
-                        cursorWatched = MainActivity.MyDb.getWatchedMovie(movies.get(i).getId());
+                        cursorWatchList = HomeScreen.MyDb.getWatchListMovie(movies.get(i).getId());
+                        cursorWatched = HomeScreen.MyDb.getWatchedMovie(movies.get(i).getId());
                         if (cursorWatchList.getCount() > 0 || cursorWatched.getCount() > 0) {
                             movies.remove(i);
                         } else

@@ -72,8 +72,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             }
             else if(context == SearchMovies.mContext){
                 int movieID = SearchMovies.allSearchMovies.get(holder.getAdapterPosition()).getId();
-                Cursor cursorWatchList = MainActivity.MyDb.getWatchListMovie(movieID);
-                Cursor cursorWatched = MainActivity.MyDb.getWatchedMovie(movieID);
+                Cursor cursorWatchList = HomeScreen.MyDb.getWatchListMovie(movieID);
+                Cursor cursorWatched = HomeScreen.MyDb.getWatchedMovie(movieID);
                 if(cursorWatchList.getCount()>0){
                     mContextString = "searchMoviesWatchList";
                 } else if(cursorWatched.getCount()>0){
