@@ -4,5 +4,6 @@ An android application that tracks your watched/listed movies.<br>
 
 <h4>Images</h4>
 
+![alt text](https://github.com/Vedank99/Movie-Tracker/blob/master/pics/Sign%20In.png?raw=true "Sign In Screen")
 ![alt text](https://github.com/Vedank99/Movie-Tracker/blob/master/pics/Main%20Screen.png?raw=true "Main Screen")
 
